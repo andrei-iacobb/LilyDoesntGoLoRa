@@ -1,0 +1,18 @@
+{
+    "wifi": {
+      "ssid": "EE-33CRFC",
+      "password": "rq6KevbDKneTNpJ7"
+    },
+    "portainer": {
+      "url": "https://192.168.1.197:9443",
+      "token": "ptr_mzerQh9JAReFDLPu7VLppKXpPOidQjDQIA+EzEuK8i4="
+    },
+    "ha": {
+      "url": "https://hass.iacob.uk",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI1NTJmYTYxODg1NzI0MTA2OGNjNzliYWIxYWI0ODQ1ZCIsImlhdCI6MTc0Mzc4NDMzNCwiZXhwIjoyMDU5MTQ0MzM0fQ.Qjk1sjJZ_7kxD8lQgSfK92x-SC8E8JbzTPY7g3gUCf8"
+    },
+    "vpn": {
+      "enabled": true
+    }
+  }
+  
