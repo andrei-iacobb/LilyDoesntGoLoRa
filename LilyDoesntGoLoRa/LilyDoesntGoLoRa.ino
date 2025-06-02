@@ -228,7 +228,47 @@ void runDeviceStats() {
 }
 
 void runWiFiTools() {
-  connectToWiFi();
+  display.clearDisplay();
+  display.setCursor(0, 0);
+  display.setTextSize(1);
+  display.println("Connect to WiFi?");
+  display.println("> Yes");
+  display.println("  No");
+  display.display();
+
+  int selection = 0; // 0 = Yes, 1 = No
+
+  while (true) {
+    if (digitalRead(BUTTON_PIN) == LOW) {
+      unsigned long pressStart = millis();
+      while (digitalRead(BUTTON_PIN) == LOW);
+      unsigned long pressDuration = millis() - pressStart;
+
+      if (pressDuration < 700) {
+        // Short press = toggle
+        selection = 1 - selection;
+      } else {
+        // Long press = confirm
+        break;
+      }
+
+      // Redraw menu
+      display.clearDisplay();
+      display.setCursor(0, 0);
+      display.setTextSize(1);
+      display.println("Connect to WiFi?");
+      display.println(selection == 0 ? "> Yes" : "  Yes");
+      display.println(selection == 1 ? "> No" : "  No");
+      display.display();
+    }
+
+    delay(100);
+  }
+
+  if (selection == 0) {
+    connectToWiFi();
+  }
+
   display.clearDisplay();
   display.setCursor(0, 0);
   display.setTextSize(1);
